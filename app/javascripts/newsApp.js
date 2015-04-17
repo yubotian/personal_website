@@ -10,6 +10,7 @@ app.controller ( 'mainController' , function( $scope ) {
 		$scope.newPost.created_at = Date.now() ;
 		$scope.posts.push ( $scope.newPost ) ;
 		$scope.newPost = { created_by : '' , text : '' , craeted_at : '' } ;
+
 	}
 
 	
