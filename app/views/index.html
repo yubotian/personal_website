@@ -9,6 +9,7 @@
 	<script src="../javascripts/myWebApp.js"></script>
 	<!-- Bootstrap and twitter bootstrap -->
 	<link rel="stylesheet" href="../../dist/style.css">
+
 	<link href = "../../dist/css/bootstrap.min.css" rel = "stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	<link href="jumbotron.css" rel="stylesheet">
@@ -41,8 +42,14 @@
 					<li><a href = "#/contact">Contact</a></li>
 				</ul>
 			</div>
-		</nav>	
+		</nav>
+
+
+		
 	</div>
-	<div ng-view> </div>
+	<div class="col-md-offset-2 col-md-8">
+			<div ng-view>
+			</div>
+	</div>
 </body>
 </html>
