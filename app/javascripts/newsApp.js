@@ -2,7 +2,7 @@
 
 var app = angular.module( 'newsApp' , [] );
 
-app.controller ( 'mainController' , function( $scope ) {
+app.controller ( 'newsController' , function( $scope ) {
 	$scope.posts = [] ;
 	$scope.newPost = { created_by : '' , text : '' , craeted_at : '' } ; //TODO: picture
 
