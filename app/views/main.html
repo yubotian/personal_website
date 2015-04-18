@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link href="jumbotron.css" rel="stylesheet">
 
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
   </head>
   
 
@@ -65,6 +67,7 @@
         <div class="clearfix">
           <form ng-Submit = "post()">
             <input required class="form-control" type="text" placeholder="Your name" ng-model="newPost.created_by"/> 
+            <input required class="form-control" type="text" placeholder="Your location" ng-model="newPost.created_location"/>
             <textarea required class="form-control" maxlength="200" rows="3" placeholder="Say something" ng-model="newPost.text"></textarea>
             
 
@@ -76,8 +79,8 @@
                  
                 <div class="post" ng-repeat="post in posts | orderBy:'created_at':true" ng-class-odd="'odd'" ng-class-even="'even'"> 
                   <p>{{post.text}}</p>
-                <small>Posted by @{{post.created_by}}</small>
-                <small class="pull-right">{{post.created_at | date:"h:mma 'on' MMM d, y"}}</small>
+                <small>Posted by {{post.created_by}} </small>
+                <small class="pull-right"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>{{post.created_location}} @ {{post.created_time | date:"h:mma 'on' MMM d, y"}}</small>
                 </div>
 
           </div>
