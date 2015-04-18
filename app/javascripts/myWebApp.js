@@ -1,6 +1,32 @@
 //chirpApp.js
 
-var app = angular.module( 'myWebApp' , [] );
+var app = angular.module( 'myWebApp' , ['ngRoute'] );
+
+app.config(function($routeProvider){
+  $routeProvider
+    //the timeline display
+    .when('/', {
+      templateUrl: 'main.html',
+      controller: 'newsController'
+    })
+    //the login display
+    .when('/login', {
+      templateUrl: 'login.html',
+      controller: 'authController'
+    })
+    //the signup display
+    .when('/register', {
+      templateUrl: 'register.html',
+      controller: 'authController'
+    });
+
+    .when('/resume', {
+      templateUrl: 'resume.html',
+      controller: 'resumeController'
+    })
+});
+
+
 
 app.controller ( 'newsController' , function( $scope ) {
 	$scope.posts = [] ;
@@ -31,3 +57,4 @@ app.controller('authController', function($scope){
     $scope.error_message = 'registration request for ' + $scope.user.username;
   };
 });
+
