@@ -33,7 +33,8 @@ router.route('/posts')
 		post.created_by = req.body.created_by;
 		post.save(function(err, post) {
 			if (err){
-				return res.send(500, err);
+				console.log('posts error');
+				return res.status(500).send(err);
 			}
 			return res.json(post);
 		});
@@ -46,7 +47,7 @@ router.route('/posts')
 			if(err){
 				return res.send(500, err);
 			}
-			return res.send(200,posts);
+			return res.status(200).send(posts);
 		});
 	});
 

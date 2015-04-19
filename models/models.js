@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var postSchema = new mongoose.Schema({
-	created_by: { type: Schema.ObjectId, ref: 'User' },		//should be changed to ObjectId, ref "User"
+	created_by: { type: String, ref: 'User' },		//should be changed to ObjectId, ref "User"
 	created_time: {type: Date, default: Date.now},
 	created_location: String,
 	text: String
