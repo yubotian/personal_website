@@ -24,8 +24,4 @@ created_by -> created location
 
 progress:
 
-mean2015 1:11 module 2 done
-
-jump to module 5 to finish frontend routing first
-
-then come back to start module3: back end
+did create partial.
