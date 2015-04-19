@@ -1,59 +1,92 @@
-//api.js
-
-
-//pulls in express module
 var express = require('express');
 var router = express.Router();
+var mongoose = require( 'mongoose' );
+var Post = mongoose.model('Post');
+//Used for routes that must be authenticated.
+function isAuthenticated (req, res, next) {
+	// if user is authenticated in the session, call the next() to call the next request handler 
+	// Passport adds this method to request object. A middleware is allowed to add properties to
+	// request and response objects
 
-router.use(function( req , res , next ){
-
-	if (req.method === "GET"){
+	//allow all get request methods
+	if(req.method === "GET"){
+		return next();
+	}
+	if (req.isAuthenticated()){
 		return next();
 	}
 
-	if(!req.isAuthenticated()) {
-		// user not authed, redirect to login page
-		return res.redirect('/#login');
-	}
+	// if the user is not authenticated then redirect him to the login page
+	return res.redirect('/#login');
+};
 
-	//user authed continue to next middleware or handler
-	return next();
-});
+//Register the authentication middleware
+router.use('/posts', isAuthenticated);
 
-/* GET home page. */
 router.route('/posts')
-		
-		//returns all posts
-		.get( function( req , res ) {
-			//temp solution
-			res.send({message: 'TODO: return all posts'});
+	//creates a new post
+	.post(function(req, res){
 
-		})
-
-		.post(function( req , res ) {
-			//temp solution
-			res.send({message: 'TODO: create a new post'});
+		var post = new Post();
+		post.text = req.body.text;
+		post.created_location = req.body.created_location;
+		post.created_by = req.body.created_by;
+		post.save(function(err, post) {
+			if (err){
+				return res.send(500, err);
+			}
+			return res.json(post);
 		});
+	})
+	//gets all posts
+	.get(function(req, res){
+		console.log('debug1');
+		Post.find(function(err, posts){
+			console.log('debug2');
+			if(err){
+				return res.send(500, err);
+			}
+			return res.send(200,posts);
+		});
+	});
 
+//post-specific commands. likely won't be used
 router.route('/posts/:id')
-		//:id wil parse the path and pass the id as param
-
-		//returns a paticular post
-		.get(function( req , res ){
-			res.send({message: 'TODO: return post with ID ' + req.params.id});
-		})
-
-		//update existing post
-		.put( function( req , res){
-			res.send({message: 'TODO: modify post with ID ' + req.params.id});
-		})
-
-		//delete existing post
-		.delete( function( req , res){
-			res.send({message: 'TODO: delete post with ID ' + req.params.id});
+	//gets specified post
+	.get(function(req, res){
+		Post.findById(req.params.id, function(err, post){
+			if(err)
+				res.send(err);
+			res.json(post);
 		});
+	}) 
+	//updates specified post
+	.put(function(req, res){
+		Post.findById(req.params.id, function(err, post){
+			if(err)
+				res.send(err);
 
+			post.created_by = req.body.created_by;
+			post.text = req.body.text;
+			post.created_location = req.body.created_location;
 
+			post.save(function(err, post){
+				if(err)
+					res.send(err);
 
-//export a router registered with express to be used by app.js
+				res.json(post);
+			});
+		});
+	})
+	//deletes the post
+	.delete(function(req, res) {
+		Post.remove({
+			_id: req.params.id
+		}, function(err) {
+			if (err)
+				res.send(err);
+			res.json("deleted :(");
+		});
+	});
+
 module.exports = router;

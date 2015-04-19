@@ -10,9 +10,14 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 //changed parts:
+require('./models/models.js');
+
 var api = require('./routes/api');
 var authenticate = require('./routes/authenticate')(passport);
 
+var mongoose = require('mongoose');
+//connect to mongo db
+mongoose.connect("mongodb://localhost:27017/newsTest");
 var app = express();
 
 // view engine setup

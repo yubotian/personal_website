@@ -31,3 +31,22 @@ backend routing: 1:21
 
 done 2:10:35 posts api tested
 
+
+
+
+
+
+module 4 
+npm install mongoose --save
+
+
+
+
+...
+
+mongo usage:
+mongo
+show dbs
+use <db>
+show collections
+<db>.<collection>.find()
