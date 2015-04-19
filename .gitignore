@@ -9,7 +9,7 @@ logs
 .DS_Store
 .DS_Store?
 
-####################### dependency dir #######################
+####################### dependency dir #########################
 node_modules/
 node_modules
 npm-debug.log
