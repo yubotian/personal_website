@@ -27,6 +27,17 @@ app.config(function($routeProvider){
       templateUrl: './views/register.html',
       controller: 'authController'
     })
+
+    .when('/aboutme', {
+      templateUrl: './views/aboutme.html',
+      //controller: 'newsController'
+    })
+
+    .when('/contact', {
+      templateUrl: '../views/contact.html',
+      //controller: 'authController'
+    })
+
     .when('/resume', {
       templateUrl: '../views/resume.html',
       controller: 'resumeController'
