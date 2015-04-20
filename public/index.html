@@ -33,15 +33,15 @@
 				<a class="navbar-brand" href="#" >Home Page</a>
 
 			</div>
-				<p class="navbar-right navbar-text" ng-hide="authenticated" style = "margin-right: 20px;"><a href="#/login">Login</a> or <a href="#/signup">Register</a></p>
-				<p class="navbar-right navbar-text" ng-show="authenticated"  style = "margin-right: 20px;"><a href="#/" ng-click="signout()">Logout</a></p>
-				<p class="navbar-right navbar-text" ng-show="authenticated"  style = "margin-right: 20px;">Signed in as {{current_user}}</p>
+			<p class="navbar-right navbar-text" ng-hide="authenticated" style = "margin-right: 20px;"><a href="#/login">Login</a> or <a href="#/signup">Register</a></p>
+			<p class="navbar-right navbar-text" ng-show="authenticated"  style = "margin-right: 20px;"><a href="#/" ng-click="signout()">Logout</a></p>
+			<p class="navbar-right navbar-text" ng-show="authenticated"  style = "margin-right: 20px;">Signed in as {{current_user}}</p>
 			<div class = "navbar-collapse collapse">
 				<ul class = "nav navbar-nav">
-					<li><a href = "#">Whats New</a></li>
+					<li><a href = "#/whatsnew">Whats New</a></li>
 					<li><a href = "#/aboutme">About Me</a></li>
 					<li><a href = "#/resume">Resume</a></li>
-					<li><a href = "#/project">Academic</a></li>
+					<li><a href = "#/academic">Academic</a></li>
 					<li><a href = "#/contact">Contact</a></li>
 				</ul>
 			</div>
@@ -52,53 +52,53 @@
 	</div>
 
 	<div class = "col-md-offset-2 col-md-8" >
-			<div ng-view>
-			</div>
+		<div ng-view>
+		</div>
 	</div>
 
 
 
-	  <div class="col-md-offset-1 col-md-11" >
-    <!-- row of columns -->
-    <div class="row">
-    	<p style='margin: 1;'>&nbsp;</p>
-    	<p style='margin: 1;'>&nbsp;</p>
-    	<p style='margin: 1;'>&nbsp;</p>
-      <div class="col-md-3" >
-        <p style='margin: 0;'>&nbsp;</p>
-        <img class="img-circle" src="../../img/bm5.jpg" width="100" height="100" style="margin-left: 20px;">
-        <h2>About Me</h2>
-        <p>Learn more about me. </p>
-        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-      </div>
-      <div class="col-md-3">
-        <p style='margin: 1;'>&nbsp;</p>
-        <img class="img-circle" src="../../img/bm2.jpg" width="100" height="100" style="margin-left: 20px;">
-        <h2>Resume</h2>
-        <p>My resume. </p>
-        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-      </div>
-      <div class="col-md-3">
-        <p style='margin: 1;'>&nbsp;</p>
-        <img class="img-circle" src="../../img/bm3.jpg" width="100" height="100" style="margin-left: 20px;">
-        <h2>Academic</h2>
-        <p>I have done a lot.</p>
-        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-      </div>
-      <div class="col-md-3" >
-        <p style='margin: 1;'>&nbsp;</p>
-        <img class="img-circle" src="../../img/bm4.jpg" width="100" height="100" style="margin-left: 20px;">
-        <h2>Contact</h2>
-        <p>Want my number?</p>
-        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-      </div>
-    </div>
+	<div class="col-md-offset-1 col-md-11" >
+		<!-- row of columns -->
+		<div class="row">
+			<p style='margin: 1;'>&nbsp;</p>
+			<p style='margin: 1;'>&nbsp;</p>
+			<p style='margin: 1;'>&nbsp;</p>
+			<div class="col-md-3" >
+				<p style='margin: 0;'>&nbsp;</p>
+				<img class="img-circle" src="../../img/bm5.jpg" width="100" height="100" style="margin-left: 20px;">
+				<h2>About Me</h2>
+				<p>Learn more about me. </p>
+				<p><a class="btn btn-default" href="#/aboutme" role="button">View details &raquo;</a></p>
+			</div>
+			<div class="col-md-3">
+				<p style='margin: 1;'>&nbsp;</p>
+				<img class="img-circle" src="../../img/bm2.jpg" width="100" height="100" style="margin-left: 20px;">
+				<h2>Resume</h2>
+				<p>My resume. </p>
+				<p><a class="btn btn-default" href="#/resume" role="button">View details &raquo;</a></p>
+			</div>
+			<div class="col-md-3">
+				<p style='margin: 1;'>&nbsp;</p>
+				<img class="img-circle" src="../../img/bm3.jpg" width="100" height="100" style="margin-left: 20px;">
+				<h2>Academic</h2>
+				<p>I have done a lot.</p>
+				<p><a class="btn btn-default" href="#/academic" role="button">View details &raquo;</a></p>
+			</div>
+			<div class="col-md-3" >
+				<p style='margin: 1;'>&nbsp;</p>
+				<img class="img-circle" src="../../img/bm4.jpg" width="100" height="100" style="margin-left: 20px;">
+				<h2>Contact</h2>
+				<p>Want my number?</p>
+				<p><a class="btn btn-default" href="#/contact" role="button">View details &raquo;</a></p>
+			</div>
+		</div>
 
-    <hr>
+		<hr>
 
-    <footer>
-      <p>&copy; by Yubo</p>
-    </footer>
-  </div> <!-- /container -->
+		<footer>
+			<p>&copy; by Yubo</p>
+		</footer>
+	</div> <!-- /container -->
 </body>
 </html>

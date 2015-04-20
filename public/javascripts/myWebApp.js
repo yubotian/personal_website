@@ -38,6 +38,16 @@ app.config(function($routeProvider){
       //controller: 'authController'
     })
 
+    .when('/academic', {
+      templateUrl: '../views/academic.html',
+      //controller: 'authController'
+    })
+
+    .when('/whatsnew', {
+      templateUrl: '../views/whatsnew.html',
+      controller: 'newsController'
+    })
+
     .when('/resume', {
       templateUrl: '../views/resume.html',
       controller: 'resumeController'
