@@ -6,24 +6,23 @@ app.config(function($routeProvider){
   $routeProvider
     //the timeline display
     .when('/', {
-      templateUrl: 'main.html',
+      templateUrl: '../views/main.html',
       controller: 'newsController'
     })
     //the login display
     .when('/login', {
-      templateUrl: 'login.html',
+      templateUrl: '../views/login.html',
       controller: 'authController'
     })
     //the signup display
     .when('/register', {
-      templateUrl: 'register.html',
+      templateUrl: '../views/register.html',
       controller: 'authController'
-    });
-
-    .when('/resume', {
-      templateUrl: 'resume.html',
-      controller: 'resumeController'
     })
+    .when('/resume', {
+      templateUrl: '../views/resume.html',
+      controller: 'resumeController'
+    });
 });
 
 
