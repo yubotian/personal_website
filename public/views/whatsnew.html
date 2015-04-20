@@ -1,0 +1,25 @@
+<!-- whatsnew.html , display all newsfeed--> 
+<div class="clearfix">
+	<form ng-Submit = "post()" ng-show="authenticated" >
+		<h4>{{current_user}} says</h4>
+		<!--<input required class="form-control" type="text" placeholder="Your name" ng-model="newPost.created_by"/> --> 
+		<input required class="form-control" type="text" placeholder="Your location" ng-model="newPost.created_location"/>
+		<textarea required class="form-control" maxlength="200" rows="3" placeholder="Say something" ng-model="newPost.text"></textarea>
+
+
+		<input class="btn btn-default pull-right" type="submit" value="Submit" />
+	</form>
+	<div id="post-stream">
+		<h3>"My richness is life, forever." -- <a href="https://en.wikipedia.org/wiki/Bob_Marley" style = "color : #424141;">Bob Mayley</a> &nbsp;</h3>
+		<br>
+
+		<div class="post" ng-repeat="post in posts | orderBy:'created_time':true" ng-class-odd="'odd'" ng-class-even="'even'"> 
+			<p>{{post.text}}</p>
+			<small>Posted by {{post.created_by}} </small>
+			<small class="pull-right"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>{{post.created_location}} @ {{post.created_time | date:"h:mma 'on' MMM d, y"}}</small>
+
+		</div>
+
+	</div>
+
+</div>
