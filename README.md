@@ -49,4 +49,6 @@ mongo
 show dbs
 use <db>
 show collections
-<db>.<collection>.find()
+db.<collection>.find()
+	to clean collection:
+db.<collection>.drop()
