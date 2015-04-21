@@ -1,7 +1,7 @@
 # personal_website
 personal website using MEAN stack.
 
-# deployed at microsoft azure under yubo.d.tian@gmail.com (ja)
+# deployed at microsoft azure under yubo93@hotmail.com (non-ms-employee account)
 
 
 
