@@ -22,7 +22,7 @@ if(process.env.DEV_ENV){
   mongoose.connect("mongodb://localhost:27017/newsTest");
 }
 else {
-  mongoose.connect("mongodb://yubo:t3mppassword@ds062097.mongolab.com:62097/yubotian");
+  mongoose.connect("mongodb://dbuseryubo:dbpassword1@ds062097.mongolab.com:62097/yubotian");
 }
 
 
