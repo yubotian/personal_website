@@ -5,7 +5,7 @@
       
       <div class = "col-md-offset-0 col-md-6">
         <h1 style="text-align:left; margin-left: 50px;">Hello,</h1>
-        <p style="text-align:left; margin-left: 50px;"> I am Yubo, currently a junior at Duke University studying Computer Science and Biology.</p>
+        <p style="text-align:left; margin-left: 50px;"> I am Yubo, currently a senior at Duke University studying Computer Science and Biology.</p>
         <p style="text-align:left; margin-left: 50px;"> Welcome to my space.</p>
       </div>
       <a class="pull-right" href="images/headshot.jpg">
@@ -31,7 +31,8 @@
     <!--to be populated by Angular-->
 
     <div class="post" ng-repeat="post in posts | orderBy:'created_time':true | limitTo: 7" ng-class-odd="'odd'" ng-class-even="'even'"> 
-      <p>{{post.text}}</p>
+      <p ng-repeat="paragraph in post.text | nlToArray track by $index">{{paragraph}}</p>
+
       <small>Posted by {{post.created_by}} </small>
       <small class="pull-right"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>{{post.created_location}} @ {{post.created_time | date:"h:mma 'on' MMM d, y"}}</small>
 

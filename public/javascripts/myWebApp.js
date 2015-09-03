@@ -111,3 +111,16 @@ app.controller('authController', function($scope , $rootScope, $http , $location
   };
 });
 
+app.filter('nlToArray', function() {
+  return function(text) {
+      return text.split('\n');
+  };
+});
+
+// TODO:
+app.filter('nlToUrl', function () {
+    return function(text) {
+        return text
+                .replace('', '<a href="https://index.html"/>');
+    }
+});
